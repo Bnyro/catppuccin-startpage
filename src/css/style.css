@@ -50,4 +50,5 @@ tabs-list {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: var(--bg);
+  place-content: center;
 }

@@ -131,15 +131,22 @@ class Tabs extends Component {
   style() {
     return `
       status-bar {
-          bottom: -70px;
           height: 32px;
           background: ${CONFIG.palette.base};
           border-radius: 4px;
           box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
       }
 
-      #panels, #panels ul,
-      #panels .links {
+      rss-feed {
+          background: ${CONFIG.palette.base};
+          border-radius: 4px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+          width: 100%;
+          overflow-x: scroll;
+          scrollbar-width: thin;
+      }
+
+      #panels ul, #panels .links {
           position: absolute;
       }
 
@@ -148,22 +155,19 @@ class Tabs extends Component {
       }
 
       #panels {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
           border-radius: 5px 0 0 5px;
           width: 90%;
           max-width: 1200px;
-          height: 450px;
-          right: 0;
-          left: 0;
-          top: 0;
-          bottom: 0;
           margin: auto;
           box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-          background: ${CONFIG.palette.base};
       }
 
       .categories {
           width: 100%;
-          height: 100%;
+          height: 450px;
           overflow: hidden;
           position: relative;
           border-radius: 10px 0 0 10px;
@@ -338,11 +342,12 @@ class Tabs extends Component {
       <div id="links" class="-">
 
         <div id="panels">
+          <rss-feed></rss-feed>
           <div class="categories">
             ${Category.getAll(this.tabs)}
             <search-bar></search-bar>
           </div>
-          <status-bar class="!-"></status-bar>
+          <status-bar></status-bar>
         </div>
       </div>
     `;

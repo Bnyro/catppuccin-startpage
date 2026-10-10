@@ -46,7 +46,6 @@ class Statusbar extends Component {
     return `
       *:not(:defined) { display: none; }
 
-      #tabs,
       #tabs .widgets,
       #tabs ul li:last-child {
           position: absolute;

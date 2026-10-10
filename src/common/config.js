@@ -9,6 +9,9 @@ class Config {
       // OpenWeatherMap API key, leave empty to disable the weather widget
       appId: "",
     },
+    rss: {
+      url: null,
+    },
     clock: {
       // 12-hour format with AM/PM
       format: "k:i p",

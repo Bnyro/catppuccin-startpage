@@ -18,3 +18,4 @@ Thumbs.db
 # Misc
 .cache/
 .tmp/
+userconfig.js
